@@ -1,0 +1,16 @@
+LIBRARY SYSTEM-Implementation Notes
+
+ Loop-rendered dynamic content
+The featured books are stored in a JavaScript array of objects where Each object contains a name property and The book cards are renddered into the webpage using map().
+
+Dynamic add and remove elements
+The reading wishlist allows users to enter a book title and add it to the list and JavaScript uses createElement() and appendChild() to create each item and Each item has a Remove button that uses remove().
+
+ Form handling and validation
+The book request form uses event.preventDefault() to prevent the page from refreshing  also JavaScriptScript reads the input values using .value and displays visible success or error feedback.
+
+Persistent state
+The reading wishllist is stored using localStorage. Wishlist items remain available after the page is refreshed, and removed items are deleted from localStorage.
+
+ Banner click-to-reveal
+Clicking the banner image uses classList.toggle() to reveal or hide information about the library.
