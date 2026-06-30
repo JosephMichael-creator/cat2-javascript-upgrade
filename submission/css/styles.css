@@ -279,6 +279,58 @@ nav a:hover {
 .remove-btn:hover {
     background-color: #dc2626;
 }
+
+/*
+   BOOK REQUEST FORM
+*/
+
+#request {
+    padding: 6rem 10%;
+    background-color: #0f172a;
+}
+
+#request-form {
+    display: grid;
+    gap: 1rem;
+    max-width: 700px;
+    margin-top: 2rem;
+}
+
+#request-form label {
+    font-weight: 700;
+}
+
+#request-form input {
+    padding: 1rem;
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    border-radius: 8px;
+    background-color: #1e293b;
+    color: #e2e8f0;
+    font-size: 1rem;
+}
+
+#request-form input:focus {
+    outline: 2px solid #38bdf8;
+}
+
+#request-form .btn {
+    border: none;
+    cursor: pointer;
+    width: fit-content;
+}
+
+.form-message {
+    margin-top: 1rem;
+    font-weight: 700;
+}
+
+.error-message {
+    color: #f87171;
+}
+
+.success-message {
+    color: #4ade80;
+}
 /* 
    6. RESPONSIVE DESIGN (Media Queries)
 */

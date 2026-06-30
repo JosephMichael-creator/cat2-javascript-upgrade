@@ -96,6 +96,46 @@ const bookCards = featuredBooks.map(function (book) {
         </div>
     `;
 });
+// Book request form validation.
+const requestForm = document.querySelector("#request-form");
+const requestFeedback = document.querySelector("#request-feedback");
+
+requestForm.addEventListener("submit", function (event) {
+    // Stop the page from refreshing after submission.
+    event.preventDefault();
+
+    // Read the values entered by the user.
+    const studentName = document.querySelector("#student-name").value.trim();
+    const studentEmail = document.querySelector("#student-email").value.trim();
+    const requestedBook = document.querySelector("#requested-book").value.trim();
+
+    // Check whether any input is empty.
+    if (
+        studentName === "" ||
+        studentEmail === "" ||
+        requestedBook === ""
+    ) {
+        requestFeedback.textContent = "Please complete all the form fields.";
+        requestFeedback.className = "form-message error-message";
+        return;
+    }
+
+    // Perform simple email validation.
+    if (!studentEmail.includes("@") || !studentEmail.includes(".")) {
+        requestFeedback.textContent = "Please enter a valid email address.";
+        requestFeedback.className = "form-message error-message";
+        return;
+    }
+
+    // Display visible confirmation.
+    requestFeedback.textContent =
+        `Thank you, ${studentName}. Your request for "${requestedBook}" has been received.`;
+
+    requestFeedback.className = "form-message success-message";
+
+    // Clear the form after successful submission.
+    requestForm.reset();
+});
 
 // Join the generated cards and display them on the page.
 bookList.innerHTML = bookCards.join("");
