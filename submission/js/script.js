@@ -26,6 +26,25 @@ const featuredBooks = [
     cover: "📙"
 }
 ];
+// Select the featured books container.
+const bookList = document.querySelector(".flex-container");
+
+// Create a card for each book.
+const bookCards = featuredBooks.map(function (book) {
+    return `
+        <div class="book-card">
+            <div class="book-cover">${book.cover}</div>
+            <h4>${book.name}</h4>
+            <span class="badge">${book.category}</span>
+            <p>${book.description}</p>
+        </div>
+    `;
+});
+
+// Display the generated cards.
+bookList.innerHTML = bookCards.join("");
+
+
 //  WISHLIST WITH LOCAL STORAGE
 
 let wishlistInput = document.querySelector("#wishlist-input");
@@ -170,5 +189,12 @@ requestForm.addEventListener("submit", function (event) {
     requestForm.reset();
 });
 
-// Join the generated cards and display them on the page.
-bookList.innerHTML = bookCards.join("");
+
+// BANNER CLICK-TO-REVEAL
+
+let bannerImage = document.querySelector("#banner-image");
+let bannerCaption = document.querySelector("#banner-caption");
+
+bannerImage.addEventListener("click", function () {
+    bannerCaption.classList.toggle("show-caption");
+});
