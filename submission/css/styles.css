@@ -105,7 +105,7 @@ nav a:hover {
     margin-bottom: 1.5rem;
     
     /* Gradient Text! We create a blue-to-purple background,
-       make the text color transparent, and clip the background to the text shape. */
+    . */
     background: linear-gradient(to right, #38bdf8, #818cf8);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent; 
@@ -117,7 +117,7 @@ nav a:hover {
     
     /* 
        perspective(1000px): Tells the browser to view this from 1000px away (3D space).
-       rotateY(-5deg): Swivels the image 5 degrees backward on its hinge. */
+       rotateY(-5deg): Swiches the image 5 degrees backward on its hinge. */
     transform: perspective(1000px) rotateY(-5deg); 
     transition: transform 0.5s ease;
 }
@@ -215,7 +215,70 @@ nav a:hover {
 .book-cover {
     font-size: 5rem;
 }
+/* 
+   READING WISHLIST
+*/
 
+#wishlist {
+    padding: 6rem 10%;
+    background-color: #0b1120;
+}
+
+.wishlist-controls {
+    display: flex;
+    gap: 1rem;
+    margin-top: 2rem;
+    margin-bottom: 1rem;
+}
+
+#wishlist-input {
+    flex: 1;
+    padding: 1rem;
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    border-radius: 8px;
+    background-color: #1e293b;
+    color: #e2e8f0;
+    font-size: 1rem;
+}
+
+#wishlist-input:focus {
+    outline: 2px solid #38bdf8;
+}
+
+#wishlist-message {
+    min-height: 1.5rem;
+    color: #38bdf8;
+    margin-bottom: 1rem;
+}
+
+#wishlist-items {
+    list-style: none;
+    display: grid;
+    gap: 1rem;
+}
+
+#wishlist-items li {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 1.5rem;
+    background-color: #1e293b;
+    border-radius: 8px;
+    border: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.remove-btn {
+    padding: 0.6rem 1rem;
+    border: none;
+    border-radius: 6px;
+    background-color: #ef4444;
+    color: white;
+    cursor: pointer;
+}
+
+.remove-btn:hover {
+    background-color: #dc2626;
+}
 /* 
    6. RESPONSIVE DESIGN (Media Queries)
 */

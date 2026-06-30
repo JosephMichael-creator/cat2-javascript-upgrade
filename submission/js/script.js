@@ -26,7 +26,62 @@ const featuredBooks = [
     cover: "📙"
 }
 ];
+// Reading Wishlist add and remove feature.
+const wishlistInput = document.querySelector("#wishlist-input");
+const addWishlistButton = document.querySelector("#add-wishlist-btn");
+const wishlistItems = document.querySelector("#wishlist-items");
+const wishlistMessage = document.querySelector("#wishlist-message");
 
+function addWishlistItem() {
+    const bookName = wishlistInput.value.trim();
+
+    // Prevent empty wishlist items.
+    if (bookName === "") {
+        wishlistMessage.textContent = "Please enter a book title.";
+        return;
+    }
+
+    // Create a new list item.
+    const listItem = document.createElement("li");
+
+    // Create the text containing the book name.
+    const bookTitle = document.createElement("span");
+    bookTitle.textContent = bookName;
+
+    // Create a remove button for this item.
+    const removeButton = document.createElement("button");
+    removeButton.textContent = "Remove";
+    removeButton.type = "button";
+    removeButton.classList.add("remove-btn");
+
+    // Remove only selected wishlist item.
+    removeButton.addEventListener("click", function () {
+        listItem.remove();
+        wishlistMessage.textContent = `${bookName} was removed.`;
+    });
+
+    // Place title and button inside the list item.
+    listItem.appendChild(bookTitle);
+    listItem.appendChild(removeButton);
+
+    // Display completed item on the webpage.
+    wishlistItems.appendChild(listItem);
+
+    wishlistMessage.textContent = `${bookName} was added to your wishlist.`;
+
+    // Clear thhe input after adding.
+    wishlistInput.value = "";
+    wishlistInput.focus();
+}
+
+addWishlistButton.addEventListener("click", addWishlistItem);
+
+// Allow the Enter key to add a book.
+wishlistInput.addEventListener("keydown", function (event) {
+    if (event.key === "Enter") {
+        addWishlistItem();
+    }
+});
 // Select the empty container from index.html.
 const bookList = document.querySelector(".flex-container");
 
