@@ -88,7 +88,9 @@ nav a:hover {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    min-height: 85vh; /* Takes up 85% of the screen height */
+    min-height: 85vh;     /* Takes up 85% of the screen height */
+    padding: 4rem 10%; 
+    gap: 3rem;
     
     /* RADIAL GRADIENT: Starts as a circle of dark blue in the top left, 
        and smoothly blends into blackish-blue towards the edges. */
