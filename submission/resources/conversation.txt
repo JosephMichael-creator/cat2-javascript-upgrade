@@ -1,0 +1,4 @@
+I interviewed Tamale, a university librarian who wants a clean, responsive webpage for the campus library. 
+The main target audience is students looking for resources, study spaces, and support. 
+The website needs to highlight the library's operating hours, available digital sections, and feature a prominent hotline number for student inquiries or issues.
+ He prefers a professional, structured layout that is easy for students to navigate on both desktop and mobile devices.
